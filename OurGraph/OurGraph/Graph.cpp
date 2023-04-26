@@ -4,7 +4,7 @@ using namespace std;
 
 Graph::Graph() {}
 
-// test comment
+// test comment2
 
   /*
    * if    already found i will tell the user
