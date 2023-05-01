@@ -1,54 +1,94 @@
 #include <iostream>
 #include "Graph.h"
+#include <fstream>
 using namespace std;
 
 
 int main()
 {
+    int choice,choice2;
+    string city;
+    string city1, city2;
+    double weight;
     Graph g;
 
-    g.addCity("cairo");
-    g.addCity("Alexandria");
-    g.addCity("MarsaMatroh");
-    g.addCity("Ismailia");
-    g.addCity("Giza");
-    g.addCity("Banisuef");
-    g.addCity("Elminia");
-    g.addCity("sues");
-    g.addCity("Zagazig");
-    g.addCity("faioum");
+    cout << "************************************" << endl;
+    cout << "******||Welcome To Wasalni||********" << endl;
+    cout << "************************************" << endl;
+    while (true)
+    {
+        cout << "1- Admin" << endl;
+        cout << "2- User" << endl;
+        cout << "3- exit" << endl;
+        cout << "Choose if you are Admin or User:";
+        cin >> choice;
+        switch (choice)
+        {
+        case 1: //Admin
+            cout << "--------------------------------------------" << endl;
+            cout << "As you are admin you can choose to : " << endl;
+            cout << "1- Add City to our MAP" << endl;
+            cout << "2- Add Edge Between cities " << endl;
+            cout << "--------------------------------------------" << endl;
+            cout << "Enter what you want to do (1 or 2):  "; cin >> choice2;
+            if (choice2 == 1)
+            {
+                cout << "Enter name of the city : "; cin >> city;
+                g.addCity(city);
+                cout << "--------------------------------------------------------------------------" << endl;
+            }
+            else if (choice2 == 2)
+            {
+                    cout << "Enter the two cities and the distance between them in this format [ 'city1' 'city2' 'distance' ]: ";
+                    cin >> city1 >> city2 >> weight;
+                    g.addEdge(city1, city2, weight);
+                    cout << "--------------------------------------------------------------------------" << endl;
+            }
+            else
+            {
+                cout << "Sorry You entered Invalid Choice, try again later!!" << endl;
+                cout << "--------------------------------------------------------------------------" << endl;
+            }
+            break;
 
-
-    g.addEdge("Giza", "sues", 146);
-    g.addEdge("Giza", "cairo", 9.2);
-    g.addEdge("Giza", "Alexandria", 222);
-
-
-    g.addEdge("Alexandria", "cairo", 221);
-    g.addEdge("Alexandria", "Giza", 228);
-    g.addEdge("Alexandria", "Zagazig", 190);
-    g.addEdge("Alexandria", "MarsaMatroh", 284);
-
-
-    g.addEdge("cairo", "Giza", 8.3);
-    g.addEdge("cairo", "Alexandria", 218);
-    g.addEdge("cairo", "Zagazig", 86);
-    g.addEdge("cairo", "Ismailia", 126);
-
-
-    g.addEdge("Ismailia", "sues", 89);
-
-    g.addEdge("Banisuef", "Giza", 155);
-
-    g.addEdge("Elminia", "Banisuef", 92);
-
-    g.addEdge("Zagazig", "Ismailia", 84);
-
-    // add edge with newyork which not found
-
-    g.addEdge("newyork", "cairo", 30000);
+        case 2:   // user
+            cout << "--------------------------------------------" << endl;
+            cout << "As you are User you can choose to : " << endl;
+            cout << "1- Display MAP Data" << endl;
+            cout << "2- Query the shortest path between 2 cities " << endl;
+            cout << "--------------------------------------------" << endl;
+            cout << "Enter your choice between (1 amd 2): "; cin >> choice2;
+            if (choice2 == 1)
+            {
+                g.displayGraph();
+                cout << "--------------------------------------------------------------------------" << endl;
+            }
+            else if (choice2 == 2)
+            {
+                //code sara / seham / shahd / dalia >> will be choices here 
+            }
+            else
+            {
+                cout << "Sorry You entered Invalid Choice, try again later!!" << endl;
+                cout << "--------------------------------------------------------------------------" << endl;
+            }
+            break; 
+        case 3:   // exit
+            g.saveData();
+            cout << "\n\nThanks for choosing Wasalni to reach your target in shortest distance" << endl;
+            cout << "               Wasalni hopes you a beautiful day     " << endl;
+            return 0;
+          
+        default:
+            cout << "Sorry You entered Invalid Choice, try again later!!" << endl;
+            cout << "--------------------------------------------------------------------------" << endl;
+            return 0;
+            break;
+        }
+    }
+    g.saveData();
+     return 0;
     
-
 }
 
 

@@ -12,7 +12,7 @@ enum type {
 
 class Graph {
     unordered_map  < string, vector <pair <string, double> > > city;
-
+   
 public:
     Graph();
     //void DisplayBucketsInfo(); //jihad
@@ -26,6 +26,7 @@ public:
     void BFS(Graph g);
     void DFS(Graph g);
     void dijkstra(Graph g);
+    void saveData();            //jihad
 };
 
 

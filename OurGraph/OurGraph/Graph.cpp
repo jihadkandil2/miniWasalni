@@ -1,10 +1,47 @@
 #include "Graph.h"
 #include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
 using namespace std;
 
-Graph::Graph() {}
+Graph::Graph() {
+    // Read the unordered_map from the file
+    ifstream infile("city.txt");
+    string line;
+    string city_name;
+    while (getline(infile, line)) {
+        if (!line.empty()) {
+            if (line.back() == ':') {
+                // Start of a new city
+                city_name = line.substr(0, line.length() - 1);
+                city[city_name] = {};
+            }
+            else {
+                // Read a pair of (city, distance)
+                string city2;
+                double distance;
+                istringstream iss(line);
+                iss >> city2 >> distance;
+                city[city_name].push_back(make_pair(city2, distance));
+            }
+        }
+    }
+    infile.close();
+}
 
-// test comment2
+void Graph :: saveData()
+{
+    // Write the unordered_map to a file
+    ofstream outfile("city.txt");
+    for (auto& it : city) {
+        outfile << it.first << ":\n";
+        for (auto& pair : it.second) {
+            outfile << "  " << pair.first << " " << pair.second << "\n";
+        }
+    }
+}
+
 
   /*
    * if    already found i will tell the user
@@ -20,6 +57,7 @@ void Graph::addCity(string name)
     }
     else {
         city[name];
+        cout << "We added " << name << " successfully." << endl;
     }
 }
 
@@ -50,8 +88,26 @@ void Graph::addEdge(string city1, string city2, double weight)
     }
     else {
         city[city1].push_back({ city2,weight });
+        cout << "Edge is added Successfully." << endl;
+    }
+    // condition to loop on the already exist edge .
+}
+
+void Graph::displayGraph()
+{
+    cout << "The Graph Data is:-" << endl;
+    cout << "--------------------" << endl;
+    for ( auto  C : city)
+    {
+        cout << C.first << " :-" << endl;
+        for (auto  LinkedCity : C.second)
+        {
+            cout << C.first << " linked To -> " << LinkedCity.first << "  with cost = " << LinkedCity.second << " KM" << endl;
+        }
+        cout << "----------------------------------------------------------------" << endl;
     }
 }
+
 
 
 
