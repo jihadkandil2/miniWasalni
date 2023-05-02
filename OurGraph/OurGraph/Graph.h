@@ -15,7 +15,7 @@ class Graph {
    
 public:
     Graph();
-    //void DisplayBucketsInfo(); //jihad
+    void DisplayBucketsInfo(); //jihad
     //void DisplayData();        //jihad
     void addCity(string name);
     void addEdge(string city1, string city2, double weight);

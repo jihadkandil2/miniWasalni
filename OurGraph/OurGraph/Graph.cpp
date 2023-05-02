@@ -1,4 +1,4 @@
-#include "Graph.h"
+﻿#include "Graph.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -108,6 +108,29 @@ void Graph::displayGraph()
     }
 }
 
+
+void Graph::DisplayBucketsInfo()
+{
+    //عشان يعدي علي كل باكيت يعني كل مدينة ال I هنا بتمثل باكيت
+    for (int i = 0; i < city.bucket_count(); ++i)
+    {
+        cout << "bucket #" << i << " of size " << city.bucket_size(i) << " contains:\n";
+        cout << "--------------------------------" << endl;
+        auto l = city.begin(i);
+        // عشان اعدي علي كل باكيت اشوف الي جواها كافاليو واشوف مرتبطة ب فيكتور حجمه اد اي
+        for (auto local_it = city.begin(i); local_it != city.end(i); ++local_it)
+        {
+            cout << local_it->first << " with " << local_it->second.size() << " element in the vector" << endl;
+            int vectorSize = l->second.size();
+            // عشان الف جوا كل فيكتور واطلع البير الي جواه
+            for (int j = 0; j < vectorSize; ++j)
+            {
+                cout << "\nElement is : " << l->second.at(j).first << " with cost $ =  " << l->second.at(j).second;
+            }
+        }
+        cout << endl << "-------------------------------------------------------------------\n";
+    }
+}
 
 
 
