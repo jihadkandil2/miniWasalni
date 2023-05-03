@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Wasalni", "Wasalni.vcxproj", "{4B40F70C-C2C8-497B-9084-9D26D458A0EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4B40F70C-C2C8-497B-9084-9D26D458A0EC}.Debug|x64.ActiveCfg = Debug|x64
+		{4B40F70C-C2C8-497B-9084-9D26D458A0EC}.Debug|x64.Build.0 = Debug|x64
+		{4B40F70C-C2C8-497B-9084-9D26D458A0EC}.Release|x64.ActiveCfg = Release|x64
+		{4B40F70C-C2C8-497B-9084-9D26D458A0EC}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {994A36DF-A396-484C-BB8D-A6BD34DBAEBC}
+	EndGlobalSection
+EndGlobal
