@@ -20,13 +20,14 @@ public:
     void addCity(string name);
     void addEdge(string city1, string city2, double weight);
     void displayGraph();
-    void deleteCity(string name);
+    void deleteCity(string city_name);
     void deleteEdge(string city1, string city2);
     void traverse(type t);
-    void BFS(Graph g);
-    void DFS(Graph g);
-    void dijkstra(Graph g);
+    void BFS(string srcNode);
+    void DFS(string start);
+    void dijkstra(string startPoint, string destination);
     void saveData();            //jihad
+    vector<string> topologicalSort();
 };
 
 

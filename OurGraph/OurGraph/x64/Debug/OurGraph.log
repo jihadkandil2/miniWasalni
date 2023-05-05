@@ -1,2 +1,3 @@
-﻿  OurGraph.cpp
+﻿  Graph.cpp
+D:\VisualStudioProjects\miniWasalni\OurGraph\OurGraph\Graph.cpp(181,46): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   OurGraph.vcxproj -> D:\VisualStudioProjects\miniWasalni\OurGraph\x64\Debug\OurGraph.exe

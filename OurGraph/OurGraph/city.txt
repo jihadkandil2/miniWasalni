@@ -1,24 +1,23 @@
 marsamatroh:
-faioum:
-banisuef:
-  giza 155
 Alexandria:
   cairo 221
   giza 228
   Zagazig 190
   marsamatroh 284
+faioum:
+banisuef:
+  giza 155
 cairo:
   Alexandria 218
   Zagazig 86
   ismailia 126
   giza 8.3
-  giza 9
+ismailia:
+  sues 89
 giza:
   sues 146
   cairo 9.2
   Alexandria 222
-ismailia:
-  sues 89
 elminia:
   banisuef 92
 sues:
